@@ -1,0 +1,107 @@
+<html>
+    <head><meta charset="utf-8">
+	</head><style>
+	body{
+background-image: url("https://fondosmil.com/fondo/65966.jpg");
+background-size: cover;
+}
+#div{
+  color:white; text-align: center; width: 31%;
+  height: auto; margin: 0 auto;background: hsl(90, 50%, 11%); border-color: #87CEEB;
+  border-width: 8px;
+  border-style: double;
+}
+.btn{
+cursor:pointer;
+}
+h4{text-align: center;background-color: #87CEEB;}
+</style>
+    <body> <div id="div"><h1>▼Pizzeria silver</h1><h3>Envío a domicilio</h3>
+        <form action="" method="get" id="form">
+            <label for="nombre">Nombre:
+              <input type="text" name="nombre" id="nombre" ><br><br>
+            </label>
+			<label for="direccion">Dirección:
+              <input type="text" name="dir" id="direccion"><br><br>
+            </label>
+            <label for="tel">Teléfono:
+              <input type="number" name="tel" id="tel" /></label><br><br>
+		 <label for="tamaño">Selecciona tamaño:</label>
+   <select name="tamaño" id="tamaño" placeholder="etc.">
+    <option>...</option>
+	<option>Individual</option>
+    <option>Chica</option>
+    <option>Mediana</option>
+    <option>Grande</option>
+    <option>Familiar</option>
+    <option>Mega</option>
+   </select>	<br><br>
+	<div id="ingr">Selecciona los ingredientes:<br></div>
+   <input id="ing1" type="checkbox" />Jamón<br>
+   <input id="ing2" type="checkbox" />Tocino<br>
+   <input id="ing3" type="checkbox" />Salchicha<br>
+   <input id="ing4" type="checkbox" />Peperoni<br>
+   <input id="ing5" type="checkbox" />Champiñones<br>
+   <input id="ing6" type="checkbox" />Piña<br>	
+   <input id="ing7" type="checkbox" />Aceitunas<br>
+   <input id="ing8" type="checkbox" />Carne<br>		
+		<p>Comentarios:<br><textarea name="mensaje" placeholder="Ingredientes extra, indicaciones, etc."></textarea></p>
+        <button type="button" onclick="validar()" class="btn">Hacer pedido</button>
+   </form><br>
+   
+   <iframe width="400" height="215" src="https://www.youtube.com/embed/T3AHBe0I0yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   
+   
+   <h3>Pedidos:</h3>
+   <div id="div1"></div><br>
+           <button type="button" class="btn" id="btn1">Borrar pedidos</button> <br><br></div>
+   <script type="text/javascript">
+            function validar() {
+			 var nomb = document.getElementById("nombre").value;
+             var dire = document.getElementById("direccion").value;
+			 var cel = document.getElementById("tel").value;
+		     var tam = document.getElementById("tamaño").value;
+             var ingredientes = document.querySelectorAll(":checked");
+	if (nomb == null || nomb.length <3){
+        nombre.style.border="2px solid red", alert("Introduce los datos correctamente.");} 
+		else {nombre.style.border="2px solid green";}
+		
+		if (dire == null || dire.length <3){
+        direccion.style.border="2px solid red";} 
+		else {direccion.style.border="2px solid green";}
+		
+		if (cel == null || cel.length <8){
+        tel.style.border="2px solid red";} 
+		else {tel.style.border="2px solid green";}
+		
+		if (tam == null || tam.length <4){
+        tamaño.style.border="2px solid red";} 
+		else {tamaño.style.border="2px solid green";}
+		
+		 if (document.getElementById('ing1').checked || document.getElementById('ing2').checked
+         ||   document.getElementById('ing3').checked || document.getElementById('ing4').checked
+		 ||   document.getElementById('ing5').checked || document.getElementById('ing6').checked
+		 ||   document.getElementById('ing7').checked || document.getElementById('ing8').checked
+		 ){ingr.style.border="2px solid green";}else{ingr.style.border="2px solid red";}  
+		
+     var div = document.getElementById('div1');
+	 var formulario = document.getElementById('form');
+     var nuevoli = document.createElement("li");
+	 var newContent = document.createTextNode("Nombre: " + nomb + ". Dirección: " + dire + ". Teléfono: " + cel + ".");
+	 nuevoli.appendChild(newContent);
+	 if (nomb == null || nomb.length <3 || dire == null || dire.length <3 || tam == null || tam.length <4){
+     }else {div.appendChild(nuevoli) & formulario.reset();}}
+	 function borrar(){
+	 document.getElementById("div1").innerHTML = "";
+	 }
+	 var boton = document.querySelector("#btn1");
+	 boton.addEventListener("click", borrar);
+	 </script>
+
+     <footer>
+        <h4> Conceptualización de servicios en la nube.     Estudiante: Rosalío Cruz Martínez. Código: 220984201 
+        Correo: netflixcruz11@gmail.com</h4>
+
+     </footer>
+    </body>
+</html>
